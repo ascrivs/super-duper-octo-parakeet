@@ -19,10 +19,12 @@ def app_factory(configurations):
     Migrate(app=app, db=db)
 #   Blueprint imports
     from app.auth import blp as auth_blp
+    from app.pharmacy import blp as pharmacy_blp
 #   Register SmoRest API and Blueprints
 
     api = Api(app)
     api.register_blueprint(auth_blp)
+    api.register_blueprint(pharmacy_blp)
     
 
     
